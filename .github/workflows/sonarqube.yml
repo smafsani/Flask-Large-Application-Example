@@ -3,13 +3,12 @@ name: SonarQube Analysis
 on:
   push:
     branches:
-      - main
       - master
 
 jobs:
   sonarQube:
     name: Run SonarQube Scanner
-    runs-on: [self-hosted, windows, x64]
+    runs-on: [self-hosted, Windows, X64]
 
     steps:
       - uses: actions/checkout@v3
