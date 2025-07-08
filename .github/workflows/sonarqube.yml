@@ -21,15 +21,6 @@ jobs:
           distribution: 'temurin'
 
       - name: Run SonarQube Scanner
-        run: |
-          curl -sSLo sonar-scanner.zip https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-5.0.1.3006-linux.zip
-          unzip sonar-scanner.zip
-          sonar-scanner-*/bin/sonar-scanner \
-            -Dsonar.projectKey=${{ github.repository }} \
-            -Dsonar.projectName="${{ github.event.repository.name }}" \
-            -Dsonar.sources=. \
-            -Dsonar.exclusions=**/tests/**,**/*.md \
-            -Dsonar.host.url=http://localhost:9000 \
-            -Dsonar.token=${{ secrets.SONAR_TOKEN }}
+        run: C:\sonar-scanner\sonar-scanner-7.1.0.4889-windows-x64\bin\sonar-scanner.bat -Dsonar.projectKey=${{ github.repository }} -Dsonar.projectName="${{ github.event.repository.name }}" -Dsonar.sources=. -Dsonar.exclusions=**/tests/**,**/*.md -Dsonar.host.url=http://localhost:9000 -Dsonar.login=${{ secrets.SONAR_TOKEN }}
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
