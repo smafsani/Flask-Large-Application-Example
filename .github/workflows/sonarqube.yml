@@ -9,7 +9,7 @@ on:
 jobs:
   sonarQube:
     name: Run SonarQube Scanner
-    runs-on: self-hosted   # 👈 this is the key change
+    runs-on: [self-hosted, windows, x64]
 
     steps:
       - uses: actions/checkout@v3
