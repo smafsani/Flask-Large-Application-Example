@@ -8,7 +8,7 @@ on:
 jobs:
   sonarQube:
     name: Run SonarQube Scanner
-    runs-on: [self-hosted, Windows]
+    runs-on: [self-hosted, Windows, X64]
 
     steps:
       - uses: actions/checkout@v3
